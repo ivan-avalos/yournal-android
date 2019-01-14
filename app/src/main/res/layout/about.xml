@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:src="@drawable/yournal_full"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/tvAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivLogo"
+        android:text="@string/about_message"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:autoLink="all"/>
+
+</RelativeLayout>

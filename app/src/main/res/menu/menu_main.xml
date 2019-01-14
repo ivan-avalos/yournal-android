@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.apps.yuxco.yournal.activities.MainActivity">
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="200"
+        android:title="@string/note_add"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_add" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="@string/action_logout"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="@string/about_title"
+        app:showAsAction="never" />
+</menu>

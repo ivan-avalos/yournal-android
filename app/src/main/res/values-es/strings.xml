@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yournal</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="input_email">Correo electrónico</string>
+    <string name="input_password">Contraseña</string>
+    <string name="action_login">Iniciar sesión</string>
+    <string name="action_signup">Crear una cuenta</string>
+    <string name="login_loading">Iniciando sesión</string>
+    <string name="error_empty_field">Un campo está vacío</string>
+    <string name="register_repeat">Repetir contraseña</string>
+    <string name="error_unmatch">Las contraseñas no coinciden</string>
+    <string name="signup_loading">Creando cuenta</string>
+    <string name="action_logout">Cerrar sesión</string>
+    <string name="title_welcome">Bienvenido, %1$s!</string>
+    <string name="note_title">Título</string>
+    <string name="note_body">Cuerpo</string>
+    <string name="title_activity_note">Agregar/Editar nota</string>
+    <string name="title_activity_note_add">Add note</string>
+    <string name="title_activity_note_edit">Edit note</string>
+
+    <string name="confirm_title">Confirmar borrar</string>
+    <string name="confirm_message">¿Está seguro de que desea borrar?</string>
+    <string name="confirm_delete">Borrar</string>
+    <string name="confirm_cancel">Cancelar</string>
+    <string name="about_title">Acerca de</string>
+    <string name="about_message">
+        <b>Copyright © 2018</b>\nIván Ávalos
+    </string>
+    <string name="title_activity_viewer">DFDFDS</string>
+    <string name="loading_notes">Cargando</string>
+    <string name="error_wifi">Sin conexión a Internet</string>
+    <string name="error_wifi_message">Error al recuperar información desde el servidor</string>
+    <string name="desc_options">Opciones</string>
+    <string name="desc_edit">Editar</string>
+    <string name="desc_delete">Eliminar</string>
+    <string name="link_website"><a href="http://yournal.ml">http://yournal.ml</a></string>
+    <string name="note_add">Agregar</string>
+    <string name="note_edit">Editar</string>
+    <string name="note_delete">Eliminar</string>
+    <string name="about_website">Sitio web</string>
+</resources>
