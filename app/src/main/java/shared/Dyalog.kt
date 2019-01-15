@@ -34,7 +34,7 @@ object Dyalog {
                 .setPositiveButton(ctx.getString(R.string.about_website)) { dialog, _ ->
                     ctx.startActivity(Intent (
                             Intent.ACTION_VIEW,
-                            Uri.parse("https://yournal.robotronica.mx")
+                            Uri.parse("https://yournal.dulcedosystems.com")
                     ))
                     dialog.dismiss()
                 }
