@@ -61,13 +61,24 @@ class ViewerActivity : AppCompatActivity() {
         note.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 title = p0.child("title").value.toString()
-                viewer_title.text = p0.child("title").value.toString()
-                viewer_date.text = p0.child("date").value.toString()
-                viewer_body.text = p0.child("body").value.toString()
+                val template = loadTemplate()
+                val content = String.format(
+                        template,
+                        p0.child("title").value.toString(),
+                        p0.child("date").value.toString(),
+                        p0.child("body").value.toString()
+                )
+                mview.setMarkDownText(content)
             }
 
             override fun onCancelled(p0: DatabaseError) {}
         })
+    }
+
+    fun loadTemplate (): String {
+        val inputStream = assets.open("template.md")
+        val bytes = inputStream.readBytes()
+        return bytes.toString(Charsets.UTF_8)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

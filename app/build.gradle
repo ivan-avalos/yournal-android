@@ -10,8 +10,8 @@ android {
         applicationId "com.apps.yuxco.yournal"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 9
-        versionName "4.1.0"
+        versionCode 10
+        versionName "5.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         // Vector
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
@@ -46,7 +46,7 @@ dependencies {
     /* Third-party libraries */
     implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
     implementation 'com.github.medyo:state-views:0.2'
-    implementation "ru.noties.markwon:core:3.0.0"
+    implementation 'com.github.mukeshsolanki:MarkdownView-Android:1.0.8'
 }
 
 apply plugin: 'com.google.gms.google-services'
