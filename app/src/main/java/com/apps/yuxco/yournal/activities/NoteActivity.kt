@@ -1,7 +1,7 @@
 package com.apps.yuxco.yournal.activities
 
+import android.app.Activity
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.apps.yuxco.yournal.R
@@ -38,7 +38,7 @@ import shared.Gloval
  *
  */
 
-class NoteActivity : AppCompatActivity() {
+class NoteActivity : Activity() {
 
     private lateinit var extras: Bundle
     private lateinit var note: DatabaseReference
@@ -47,9 +47,9 @@ class NoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        setActionBar(toolbar)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+        actionBar?.setDisplayShowHomeEnabled(true)
         toolbar.setNavigationOnClickListener {
             finish()
         }

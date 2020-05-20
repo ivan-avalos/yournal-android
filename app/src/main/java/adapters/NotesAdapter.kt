@@ -1,20 +1,12 @@
 package adapters
 
-import android.content.Intent
-import android.media.Image
-import android.os.Build
-import android.support.annotation.RequiresApi
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.recyclerview.widget.RecyclerView
 import com.apps.yuxco.yournal.R
-import com.apps.yuxco.yournal.activities.MainActivity
-import com.apps.yuxco.yournal.activities.NoteActivity
-import com.apps.yuxco.yournal.activities.ViewerActivity
 import com.daimajia.swipe.SwipeLayout
-import shared.Gloval
 import java.util.*
 
 /*

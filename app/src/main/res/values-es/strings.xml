@@ -24,9 +24,7 @@
     <string name="confirm_delete">Borrar</string>
     <string name="confirm_cancel">Cancelar</string>
     <string name="about_title">Acerca de</string>
-    <string name="about_message">
-        <b>Copyright © 2018</b>\nIván Ávalos
-    </string>
+    <string name="about_message"><b>Copyright © 2020</b> Iván Ávalos</string>
     <string name="title_activity_viewer">DFDFDS</string>
     <string name="loading_notes">Cargando</string>
     <string name="error_wifi">Sin conexión a Internet</string>
@@ -34,7 +32,7 @@
     <string name="desc_options">Opciones</string>
     <string name="desc_edit">Editar</string>
     <string name="desc_delete">Eliminar</string>
-    <string name="link_website"><a href="http://yournal.ml">http://yournal.ml</a></string>
+    <string name="link_website"><a href="https://yournal.avalos.me">https://yournal.avalos.me</a></string>
     <string name="note_add">Agregar</string>
     <string name="note_edit">Editar</string>
     <string name="note_delete">Eliminar</string>

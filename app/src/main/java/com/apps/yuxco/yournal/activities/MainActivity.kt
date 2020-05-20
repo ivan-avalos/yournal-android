@@ -2,16 +2,16 @@ package com.apps.yuxco.yournal.activities
 
 import adapters.Note
 import adapters.NotesAdapter
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.apps.yuxco.yournal.R
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import shared.Dyalog
 import shared.Gloval
 import shared.Gloval.mUser
-import java.util.*
+import kotlin.system.exitProcess
 
 /*
  * MainActivity.kt
@@ -49,18 +49,18 @@ import java.util.*
  *
  */
 
-class MainActivity: AppCompatActivity() {
+class MainActivity: Activity() {
     lateinit var adapter: NotesAdapter
     lateinit var lmanager: LinearLayoutManager
 
     /* Authentication UI */
-    private val providers = Arrays.asList(
+    private val providers = listOf(
             AuthUI.IdpConfig.EmailBuilder().build(),
             AuthUI.IdpConfig.GoogleBuilder().build())
 
     private fun setFirebaseDataListener () {
         status_page.displayLoadingState()
-        Gloval.mRef.child("users").child(Gloval.mUser?.uid!!)
+        Gloval.mRef.child("users").child(mUser?.uid!!)
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(p0: DataSnapshot) {
                         adapter.clearData()
@@ -98,7 +98,7 @@ class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setActionBar(toolbar)
 
         /* Check WiFi connection */
         checkWiFi()
@@ -108,7 +108,7 @@ class MainActivity: AppCompatActivity() {
         Gloval.mRef = Gloval.mDB.reference
 
         /* RecyclerView */
-        adapter = NotesAdapter(editCallback = { swipeLay, note ->
+        adapter = NotesAdapter(editCallback = { _, note ->
             val intent = Intent(this, NoteActivity::class.java)
             intent.putExtra("code", Gloval.EDIT_CODE)
             intent.putExtra("id", note.id)
@@ -116,7 +116,7 @@ class MainActivity: AppCompatActivity() {
         }, deleteCallback = { swipeLay, note ->
             Gloval.deleteNote(this, note.id)
             swipeLay.close()
-        }, viewCallback = { swipeLay, note ->
+        }, viewCallback = { _, note ->
             val intent = Intent(this, ViewerActivity::class.java)
             intent.putExtra("id", note.id)
             startActivity(intent)
@@ -126,13 +126,14 @@ class MainActivity: AppCompatActivity() {
         rvNotes.adapter = adapter
         rvNotes.layoutManager = lmanager
 
-        if(Gloval.mUser == null) loadLogin()
+        if(mUser == null) loadLogin()
         else setFirebaseDataListener()
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
@@ -166,7 +167,7 @@ class MainActivity: AppCompatActivity() {
         if(resultCode == RESULT_OK) {
             when(requestCode) {
                 Gloval.RC_SIGN_IN -> {
-                    Gloval.mUser = FirebaseAuth.getInstance().currentUser
+                    mUser = FirebaseAuth.getInstance().currentUser
                 }
             }
         }
@@ -174,7 +175,7 @@ class MainActivity: AppCompatActivity() {
 
     private fun checkWiFi() {
         status_page.setOnStateButtonClicked {
-            System.exit(0)
+            exitProcess(0)
         }
 
         val connManager = getSystemService(Context.CONNECTIVITY_SERVICE)
@@ -184,7 +185,7 @@ class MainActivity: AppCompatActivity() {
         } else false
         if (!isConnected) {
             status_page.displayState("STATE_NO_WIFI")
-            supportActionBar?.hide()
+            actionBar?.hide()
         }
     }
 

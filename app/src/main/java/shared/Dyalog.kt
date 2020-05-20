@@ -6,9 +6,6 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
-import android.support.annotation.RequiresApi
-import android.view.LayoutInflater
 import com.apps.yuxco.yournal.R
 
 /**
@@ -26,7 +23,6 @@ object Dyalog {
     }
 
     fun showAboutDialog(ctx: Activity) {
-
         AlertDialog.Builder(ctx)
                 .setTitle(ctx.getString(R.string.about_title))
                 .setView(ctx.layoutInflater.inflate(R.layout.about, null))
@@ -34,7 +30,7 @@ object Dyalog {
                 .setPositiveButton(ctx.getString(R.string.about_website)) { dialog, _ ->
                     ctx.startActivity(Intent (
                             Intent.ACTION_VIEW,
-                            Uri.parse("https://yournal.dulcedosystems.com")
+                            Uri.parse("https://yournal.avalos.me/")
                     ))
                     dialog.dismiss()
                 }
@@ -47,8 +43,8 @@ object Dyalog {
         AlertDialog.Builder(ctx)
                 .setTitle(ctx.getString(R.string.confirm_title))
                 .setMessage(ctx.getString(R.string.confirm_message))
+                .setNeutralButton(ctx.getString(R.string.confirm_cancel), cancell)
                 .setNegativeButton(ctx.getString(R.string.confirm_delete), okl)
-                .setPositiveButton(ctx.getString(R.string.confirm_cancel), cancell)
                 .create().show()
     }
 

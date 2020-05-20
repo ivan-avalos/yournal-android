@@ -20,50 +20,49 @@
             android:focusableInTouchMode="true"/>
 
         <!--  Email Label -->
-        <android.support.design.widget.TextInputLayout
+        <android.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/signup_email"
+            <android.widget.EditText android:id="@+id/signup_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:hint="@string/input_email"
                 android:imeOptions="actionNext"/>
-        </android.support.design.widget.TextInputLayout>
+        </android.widget.TextInputLayout>
 
         <!--  Password Label -->
-        <android.support.design.widget.TextInputLayout
+        <android.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/signup_password"
+            <android.widget.EditText android:id="@+id/signup_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="@string/input_password"
                 android:imeOptions="actionNext"/>
-        </android.support.design.widget.TextInputLayout>
+        </android.widget.TextInputLayout>
 
         <!--  Repeat password Label -->
-        <android.support.design.widget.TextInputLayout
+        <android.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/signup_repeat"
+            <android.widget.EditText android:id="@+id/signup_repeat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="@string/register_repeat"
                 android:imeOptions="actionDone"/>
-        </android.support.design.widget.TextInputLayout>
+        </android.widget.TextInputLayout>
 
-        <android.support.v7.widget.AppCompatButton
+        <Button
             android:id="@+id/btn_signup"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -73,7 +72,6 @@
 
         <Button
             android:id="@+id/link_login"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"

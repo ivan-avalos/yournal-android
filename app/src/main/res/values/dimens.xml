@@ -1,9 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-
     <dimen name="state_views_icon_size">150dp</dimen>
-    
-    <dimen name="title_size">25sp</dimen>
-    <dimen name="date_size">14sp</dimen>
-    <dimen name="body_size">16sp</dimen>
+    <dimen name="title_size">22sp</dimen>
+    <dimen name="date_size">10sp</dimen>
+    <dimen name="body_size">14sp</dimen>
 </resources>

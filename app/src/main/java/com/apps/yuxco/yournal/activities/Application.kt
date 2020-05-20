@@ -1,7 +1,8 @@
 package com.apps.yuxco.yournal.activities
 
+import android.app.Application
+import android.content.res.Resources
 import android.graphics.Color
-import android.support.v7.content.res.AppCompatResources
 import com.apps.yuxco.yournal.R
 import sakout.mehdi.StateViews.StateViewsBuilder
 
@@ -28,18 +29,15 @@ import sakout.mehdi.StateViews.StateViewsBuilder
  *
  */
 
-class Application: android.app.Application() {
-    private lateinit var builder: StateViewsBuilder
-
+class Application: Application() {
     override fun onCreate() {
         super.onCreate()
-
         /* Status page */
         StateViewsBuilder.init(this) .setIconColor(Color.parseColor("#D2D5DA"))
                 .addState("STATE_NO_WIFI",
                         getString(R.string.error_wifi),
                         getString(R.string.error_wifi_message),
-                        AppCompatResources.getDrawable(this, R.drawable.ic_server_error),
+                        this.getDrawable(R.drawable.ic_server_error),
                         getString(R.string.confirm_cancel))
                 .setButtonBackgroundColor(Color.parseColor("#317DED"))
                 .iconSize = resources.getDimensionPixelSize(R.dimen.state_views_icon_size)

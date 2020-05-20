@@ -24,16 +24,14 @@
     <string name="confirm_cancel">Cancel</string>
     <string name="title_activity_viewer">ViewerActivity</string>
     <string name="about_title">About</string>
-    <string name="about_message">
-        <b>Copyright © 2018</b>\nIván Ávalos
-    </string>
+    <string name="about_message"><b>Copyright © 2020</b> Iván Ávalos</string>
     <string name="loading_notes">Loading</string>
     <string name="error_wifi">No Internet connection</string>
     <string name="error_wifi_message">Error retrieving information from server</string>
     <string name="desc_options">Options</string>
     <string name="desc_edit">Edit</string>
     <string name="desc_delete">Delete</string>
-    <string name="link_website"><a href="http://yournal.ml">http://yournal.ml</a></string>
+    <string name="link_website"><a href="https://yournal.avalos.me">https://yournal.avalos.me</a></string>
     <string name="note_add">Add</string>
     <string name="note_edit">Edit</string>
     <string name="note_delete">Delete</string>

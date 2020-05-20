@@ -1,6 +1,5 @@
 package shared
 
-import adapters.Note
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
@@ -19,15 +18,14 @@ object Gloval {
     lateinit var mDB: FirebaseDatabase
     lateinit var mRef: DatabaseReference
 
-    val RC_SIGN_IN = 123
-    val ADD_CODE = 1
-    val EDIT_CODE = 2
+    const val RC_SIGN_IN = 123
+    const val ADD_CODE = 1
+    const val EDIT_CODE = 2
 
     @SuppressLint("SimpleDateFormat")
     fun getTimestamp(): String {
-
         val c = Calendar.getInstance()
-        return SimpleDateFormat("HH:mm dd/MM/yyyy").format(c.time)
+        return SimpleDateFormat("dd/MM/yyyy HH:mm").format(c.time)
     }
 
     fun deleteNote(context: Context, noteId: String, callback: (()->(Unit))? = null) {
